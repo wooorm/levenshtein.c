@@ -1,0 +1,10 @@
+*.DS_STORE
+*.o
+*.log
+*.gcov
+*.gcda
+*.gcno
+levenshtein
+test
+example
+coverage

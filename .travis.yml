@@ -1,0 +1,6 @@
+language: c
+compiler:
+- clang
+- gcc
+script: make run-test
+after_script: sudo pip install cpp-coveralls && make run-coverage && coveralls --exclude test.c
