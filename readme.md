@@ -14,7 +14,7 @@ Or clone the repo.
 
 ## Usage
 
-### unsigned int levenshtein(const char *a, const char *b);
+### `unsigned int levenshtein(const char *a, const char *b);`
 
 ```c
 #include <stdio.h>
