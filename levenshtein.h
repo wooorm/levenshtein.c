@@ -1,3 +1,6 @@
+#ifndef LEVENSHTEIN_H
+#define LEVENSHTEIN_H
+
 /**
  * `levenshtein.h` - levenshtein
  *
@@ -16,3 +19,5 @@
 
 unsigned int
 levenshtein(const char *a, const char *b);
+
+#endif // LEVENSHTEIN_H
