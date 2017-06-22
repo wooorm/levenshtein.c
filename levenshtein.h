@@ -10,8 +10,15 @@
  * See http://en.wikipedia.org/wiki/Levenshtein_distance
  * for more information.
  */
-
+#ifdef __cplusplus
+extern "C" {
+#endif
+  
 unsigned int
 levenshtein(const char *a, const char *b);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // LEVENSHTEIN_H
