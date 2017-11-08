@@ -51,7 +51,7 @@ main(int argc, char **argv) {
 
 [cli]: https://github.com/wooorm/levenshtein
 
-[js]: https://github.com/wooorm/levenshtein-edit-distance
+[js]: https://github.com/words/levenshtein-edit-distance
 
 [mit]: LICENSE
 
