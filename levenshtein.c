@@ -45,7 +45,7 @@ levenshtein(const char *a, const char *b) {
   while (bIndex < bLength) {
     code = b[bIndex];
     result = distance = bIndex++;
-    index = -1;
+    index = 0xffffffff;
 
     while (++index < length) {
       bDistance = code == a[index] ? distance : distance + 1;
