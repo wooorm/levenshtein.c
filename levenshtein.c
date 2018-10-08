@@ -11,9 +11,7 @@
  * for more information. */
 
 unsigned int
-levenshtein(const char *a, const char *b) {
-  unsigned int length = strlen(a);
-  unsigned int bLength = strlen(b);
+levenshtein_n(const char *a, const unsigned int length, const char *b, const unsigned int bLength) {
   unsigned int *cache = calloc(length, sizeof(unsigned int));
   unsigned int index = 0;
   unsigned int bIndex = 0;
@@ -64,4 +62,12 @@ levenshtein(const char *a, const char *b) {
   free(cache);
 
   return result;
+}
+
+unsigned int
+levenshtein(const char *a, const char *b) {
+  const unsigned int length = (unsigned int) strlen(a);
+  const unsigned int bLength = (unsigned int) strlen(b);
+
+  return levenshtein_n(a, length, b, bLength);
 }

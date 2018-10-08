@@ -13,9 +13,12 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-  
+
 unsigned int
 levenshtein(const char *a, const char *b);
+
+unsigned int
+levenshtein_n (const char *a, const unsigned int length, const char *b, const unsigned int bLength);
 
 #ifdef __cplusplus
 }
