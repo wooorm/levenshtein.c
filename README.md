@@ -35,6 +35,21 @@ main(int argc, char **argv) {
 }
 ```
 
+### `unsigned int levenshtein_n(const char *a, const size_t length, const char *b, const size_t bLength);`
+
+``` c
+#include <stdio.h>
+#include "levenshtein.h"
+
+int
+main() {
+  char *a = 'foobar';
+  char *b = 'hello';
+
+  printf("%d\n", levenshtein_n(a, 6, b, 5));
+}
+```
+
 ## License
 
 [MIT][] © [Titus Wormer][author]
