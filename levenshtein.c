@@ -4,20 +4,21 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 
-/* Returns an unsigned integer, depicting
+/* Returns a size_t, depicting
  * the difference between `a` and `b`.
  * See http://en.wikipedia.org/wiki/Levenshtein_distance
  * for more information. */
 
-unsigned int
-levenshtein_n(const char *a, const unsigned int length, const char *b, const unsigned int bLength) {
-  unsigned int *cache = calloc(length, sizeof(unsigned int));
-  unsigned int index = 0;
-  unsigned int bIndex = 0;
-  unsigned int distance;
-  unsigned int bDistance;
-  unsigned int result;
+size_t
+levenshtein_n(const char *a, const size_t length, const char *b, const size_t bLength) {
+  size_t *cache = calloc(length, sizeof(size_t));
+  size_t index = 0;
+  size_t bIndex = 0;
+  size_t distance;
+  size_t bDistance;
+  size_t result;
   char code;
 
   /* Shortcut optimizations / degenerate cases. */
@@ -43,7 +44,7 @@ levenshtein_n(const char *a, const unsigned int length, const char *b, const uns
   while (bIndex < bLength) {
     code = b[bIndex];
     result = distance = bIndex++;
-    index = 0xffffffff;
+    index = SIZE_MAX;
 
     while (++index < length) {
       bDistance = code == a[index] ? distance : distance + 1;
@@ -64,10 +65,10 @@ levenshtein_n(const char *a, const unsigned int length, const char *b, const uns
   return result;
 }
 
-unsigned int
+size_t
 levenshtein(const char *a, const char *b) {
-  const unsigned int length = (unsigned int) strlen(a);
-  const unsigned int bLength = (unsigned int) strlen(b);
+  const size_t length = strlen(a);
+  const size_t bLength = strlen(b);
 
   return levenshtein_n(a, length, b, bLength);
 }
