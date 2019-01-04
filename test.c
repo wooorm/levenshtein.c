@@ -43,7 +43,7 @@ assertDistance(const char *input, const char *alternative, size_t expected) {
 
 int
 main() {
-  /* It should work. */
+  // It should work.
   assertDistance("", "a", 1);
   assertDistance("a", "", 1);
   assertDistance("", "", 0);
@@ -52,15 +52,15 @@ main() {
   assertDistance("gumbo", "gambol", 2);
   assertDistance("saturday", "sunday", 3);
 
-  /* It should match case sensitive. */
+  // It should match case sensitive.
   assertDistance("DwAyNE", "DUANE", 2);
   assertDistance("dwayne", "DuAnE", 5);
 
-  /* It not care about parameter ordering. */
+  // It not care about parameter ordering.
   assertDistance("aarrgh", "aargh", 1);
   assertDistance("aargh", "aarrgh", 1);
 
-  /* Some tests form `hiddentao/fast-levenshtein`. */
+  // Some tests form `hiddentao/fast-levenshtein`.
   assertDistance("a", "b", 1);
   assertDistance("ab", "ac", 1);
   assertDistance("ac", "bc", 1);
@@ -73,7 +73,7 @@ main() {
   assertDistance("levenshtein", "frankenstein", 6);
   assertDistance("distance", "difference", 5);
 
-  /* Log total errors. */
+  // Log total errors.
   printf("\n");
 
   if (errorCount != 0) {
@@ -84,7 +84,7 @@ main() {
     exit(EXIT_FAILURE);
   }
 
-  /* Or, log total successes. */
+  // Or, log total successes.
   printf("\033[32m");
   printf("(✓) Passed %d assertions without errors", assertionCount);
   printf("\033[0m");

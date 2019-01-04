@@ -1,16 +1,13 @@
-/* `levenshtein.c` - levenshtein
- * MIT licensed.
- * Copyright (c) 2015 Titus Wormer <tituswormer@gmail.com> */
+// `levenshtein.c` - levenshtein
+// MIT licensed.
+// Copyright (c) 2015 Titus Wormer <tituswormer@gmail.com>
 
 #include <string.h>
 #include <stdlib.h>
 #include <stdint.h>
 
-/* Returns a size_t, depicting
- * the difference between `a` and `b`.
- * See http://en.wikipedia.org/wiki/Levenshtein_distance
- * for more information. */
-
+// Returns a size_t, depicting the difference between `a` and `b`.
+// See <http://en.wikipedia.org/wiki/Levenshtein_distance> for more information.
 size_t
 levenshtein_n(const char *a, const size_t length, const char *b, const size_t bLength) {
   size_t *cache = calloc(length, sizeof(size_t));
@@ -21,7 +18,7 @@ levenshtein_n(const char *a, const size_t length, const char *b, const size_t bL
   size_t result;
   char code;
 
-  /* Shortcut optimizations / degenerate cases. */
+  // Shortcut optimizations / degenerate cases.
   if (a == b) {
     return 0;
   }
@@ -34,13 +31,13 @@ levenshtein_n(const char *a, const size_t length, const char *b, const size_t bL
     return length;
   }
 
-  /* initialize the vector. */
+  // initialize the vector.
   while (index < length) {
     cache[index] = index + 1;
     index++;
   }
 
-  /* Loop. */
+  // Loop.
   while (bIndex < bLength) {
     code = b[bIndex];
     result = distance = bIndex++;
