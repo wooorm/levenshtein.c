@@ -14,7 +14,7 @@ Or clone the repo.
 
 ## Usage
 
-### `unsigned int levenshtein(const char *a, const char *b);`
+### `size_t levenshtein(const char *a, const char *b);`
 
 ```c
 #include <stdio.h>
@@ -35,7 +35,7 @@ main(int argc, char **argv) {
 }
 ```
 
-### `unsigned int levenshtein_n(const char *a, const size_t length, const char *b, const size_t bLength);`
+### `size_t levenshtein_n(const char *a, const size_t length, const char *b, const size_t bLength);`
 
 ``` c
 #include <stdio.h>
