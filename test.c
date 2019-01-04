@@ -9,19 +9,31 @@ static int assertionCount = 0;
 static int errorCount = 0;
 
 static void
-assertDistance(const char *input, const char *alternative, unsigned int result) {
-  unsigned int res = levenshtein(input, alternative);
+printResult (const char *input, const char *alternative, size_t actual, size_t expected) {
+  fprintf(stderr, "\033[31m");
+  fprintf(stderr,
+    "  (✖) For `%s` and `%s`. Expected `%zu`, got `%zu`",
+    input, alternative, expected, actual
+  );
+  fprintf(stderr, "\033[0m");
+  fprintf(stderr, "\n");
+}
 
-  if (res != result) {
+static void
+assertDistance(const char *input, const char *alternative, size_t expected) {
+  const size_t na = strlen(input);
+  const size_t nb = strlen(alternative);
+  const size_t res = levenshtein(input, alternative);
+  const size_t res_n = levenshtein_n(input, na, alternative, nb);
+
+  if (res != expected) {
     errorCount++;
+    printResult(input, alternative, res, expected);
 
-    fprintf(stderr, "\033[31m");
-    fprintf(stderr,
-      "  (✖) For `%s` and `%s`. Expected `%d`, got `%d`",
-      input, alternative, result, res
-    );
-    fprintf(stderr, "\033[0m");
-    fprintf(stderr, "\n");
+  } else if (res_n != expected) {
+    errorCount++;
+    printResult(input, alternative, res_n, expected);
+
   } else {
     printf("\033[32m.\033[0m");
   }

@@ -5,7 +5,7 @@
  * MIT licensed.
  * Copyright (c) 2015 Titus Wormer <tituswormer@gmail.com> */
 
-/* Returns an unsigned integer, depicting
+/* Returns a size_t, depicting
  * the difference between `a` and `b`.
  * See http://en.wikipedia.org/wiki/Levenshtein_distance
  * for more information.
@@ -13,9 +13,12 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-  
-unsigned int
+
+size_t
 levenshtein(const char *a, const char *b);
+
+size_t
+levenshtein_n (const char *a, const size_t length, const char *b, const size_t bLength);
 
 #ifdef __cplusplus
 }
