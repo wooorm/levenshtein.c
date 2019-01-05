@@ -31,7 +31,7 @@ main(int argc, char **argv) {
     return 1;
   }
 
-  printf("%d\n", levenshtein(a, b));
+  printf("%zu\n", levenshtein(a, b));
 }
 ```
 
@@ -46,7 +46,7 @@ main() {
   const char *a = "foobar";
   const char *b = "hello";
 
-  printf("%d\n", levenshtein_n(a, 6, b, 5));
+  printf("%zu\n", levenshtein_n(a, 6, b, 5));
 }
 ```
 
