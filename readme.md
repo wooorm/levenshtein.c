@@ -43,8 +43,8 @@ main(int argc, char **argv) {
 
 int
 main() {
-  char *a = 'foobar';
-  char *b = 'hello';
+  const char *a = "foobar";
+  const char *b = "hello";
 
   printf("%d\n", levenshtein_n(a, 6, b, 5));
 }
