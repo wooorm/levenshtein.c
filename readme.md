@@ -1,4 +1,7 @@
-# levenshtein(3) [![Build Status][travis-badge]][travis-status] [![Coverage Status][coverage-badge]][coverage-status]
+# levenshtein(3)
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
 
 Vladimir Levenshtein’s edit distance algorithm<sup>[1][wiki]</sup> as a C library. There’s also a CLI: [levenshtein(1)][cli], and a [JavaScript version][js].
 
@@ -54,13 +57,13 @@ main() {
 
 [MIT][] © [Titus Wormer][author]
 
-[travis-badge]: https://img.shields.io/travis/wooorm/levenshtein.c.svg
+[build-badge]: https://img.shields.io/travis/wooorm/levenshtein.c.svg
 
-[travis-status]: https://travis-ci.org/wooorm/levenshtein.c
+[build]: https://travis-ci.org/wooorm/levenshtein.c
 
 [coverage-badge]: https://img.shields.io/coveralls/wooorm/levenshtein.c.svg
 
-[coverage-status]: https://coveralls.io/r/wooorm/levenshtein.c?branch=master
+[coverage]: https://coveralls.io/r/wooorm/levenshtein.c?branch=master
 
 [wiki]: https://en.wikipedia.org/wiki/Levenshtein_distance
 
