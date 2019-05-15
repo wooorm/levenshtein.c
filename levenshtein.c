@@ -7,7 +7,7 @@
 #include <stdint.h>
 
 // Returns a size_t, depicting the difference between `a` and `b`.
-// See <http://en.wikipedia.org/wiki/Levenshtein_distance> for more information.
+// See <https://en.wikipedia.org/wiki/Levenshtein_distance> for more information.
 size_t
 levenshtein_n(const char *a, const size_t length, const char *b, const size_t bLength) {
   size_t *cache = calloc(length, sizeof(size_t));

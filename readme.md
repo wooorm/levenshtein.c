@@ -62,7 +62,7 @@ main() {
 
 [coverage-status]: https://coveralls.io/r/wooorm/levenshtein.c?branch=master
 
-[wiki]: http://en.wikipedia.org/wiki/Levenshtein_distance
+[wiki]: https://en.wikipedia.org/wiki/Levenshtein_distance
 
 [cli]: https://github.com/wooorm/levenshtein
 
@@ -70,4 +70,4 @@ main() {
 
 [mit]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
