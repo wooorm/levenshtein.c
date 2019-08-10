@@ -10,7 +10,7 @@
 // See <https://en.wikipedia.org/wiki/Levenshtein_distance> for more information.
 size_t
 levenshtein_n(const char *a, const size_t length, const char *b, const size_t bLength) {
-  size_t *cache = calloc(length, sizeof(size_t));
+  
   size_t index = 0;
   size_t bIndex = 0;
   size_t distance;
@@ -30,6 +30,7 @@ levenshtein_n(const char *a, const size_t length, const char *b, const size_t bL
   if (bLength == 0) {
     return length;
   }
+  size_t *cache = calloc(length, sizeof(size_t));
 
   // initialize the vector.
   while (index < length) {
