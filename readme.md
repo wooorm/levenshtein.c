@@ -63,7 +63,7 @@ main() {
 
 [coverage-badge]: https://img.shields.io/coveralls/wooorm/levenshtein.c.svg
 
-[coverage]: https://coveralls.io/r/wooorm/levenshtein.c?branch=master
+[coverage]: https://coveralls.io/github/wooorm/levenshtein.c
 
 [wiki]: https://en.wikipedia.org/wiki/Levenshtein_distance
 
