@@ -9,6 +9,8 @@
 
 // Returns a size_t, depicting the difference between `a` and `b`.
 // See <https://en.wikipedia.org/wiki/Levenshtein_distance> for more information.
+//
+// If there was an error allocating memory, errno is set to ENOMEM and 0 is returned.
 size_t
 levenshtein_n(const char *a, const size_t length, const char *b, const size_t bLength) {
   // Shortcut optimizations / degenerate cases.
@@ -25,6 +27,9 @@ levenshtein_n(const char *a, const size_t length, const char *b, const size_t bL
   }
 
   size_t *cache = calloc(length, sizeof(size_t));
+  if (cache == NULL) {
+    return 0;
+  }
   size_t index = 0;
   size_t bIndex = 0;
   size_t distance;
