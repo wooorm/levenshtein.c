@@ -7,7 +7,7 @@ Vladimir Levenshtein’s edit distance algorithm<sup>[1][wiki]</sup> as a C libr
 
 ## Installation
 
-CLib:
+[CLib][]:
 
 ```sh
 $ clib install wooorm/levenshtein.c
@@ -74,3 +74,5 @@ main() {
 [mit]: license
 
 [author]: https://wooorm.com
+
+[clib]: https://github.com/clibs/clib
