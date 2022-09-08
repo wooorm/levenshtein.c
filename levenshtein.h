@@ -1,6 +1,8 @@
 #ifndef LEVENSHTEIN_H
 #define LEVENSHTEIN_H
 
+#include <stddef.h>
+
 // `levenshtein.h` - levenshtein
 // MIT licensed.
 // Copyright (c) 2015 Titus Wormer <tituswormer@gmail.com>
